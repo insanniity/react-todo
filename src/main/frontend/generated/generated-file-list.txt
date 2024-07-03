@@ -1,5 +1,15 @@
+RoleController.ts
 TarefasController.ts
+UserController.ts
+dev/insannity/react_todo/dtos/RoleDTO.ts
 dev/insannity/react_todo/dtos/TarefaDTO.ts
+dev/insannity/react_todo/dtos/UserDTO.ts
+dev/insannity/react_todo/dtos/UserInsertDTO.ts
+dev/insannity/react_todo/dtos/UserUpdateDTO.ts
 connect-client.default.ts
 endpoints.ts
+dev/insannity/react_todo/dtos/RoleDTOModel.ts
 dev/insannity/react_todo/dtos/TarefaDTOModel.ts
+dev/insannity/react_todo/dtos/UserDTOModel.ts
+dev/insannity/react_todo/dtos/UserInsertDTOModel.ts
+dev/insannity/react_todo/dtos/UserUpdateDTOModel.ts

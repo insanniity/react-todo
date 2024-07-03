@@ -34,11 +34,41 @@
  ******************************************************************************/
 import {RouterConfigurationBuilder} from '@vaadin/hilla-file-router/runtime.js';
 import Flow from 'Frontend/generated/flow/Flow';
+import Login from "Frontend/pages";
+import ListUsers from "Frontend/pages/users";
+import EditUser from "Frontend/pages/users/edit";
+import AddUser from "Frontend/pages/users/add";
+import PainelLayout from "Frontend/components/PainelLayout";
+import Home from "Frontend/pages/home";
+import ListRoles from "Frontend/pages/roles";
+import EditRole from "Frontend/pages/roles/edit";
+import AddRole from "Frontend/pages/roles/add";
 
 export const {router, routes} = new RouterConfigurationBuilder()
     // .withFileRoutes(fileRoutes) // (1)
     // To define routes manually or adding an individual route, use the
     // following code and remove (1):
+    .withReactRoutes(
+        [
+            {path: '/', element: <Login/>},
+            {path: '/login', element: <Login/>},
+            {
+                element: <PainelLayout/>,
+                children: [
+                    {path: '/home', element: <Home />},
+
+                    {path: '/users', element: <ListUsers/>},
+                    {path: '/users/edit/:id', element: <EditUser/>},
+                    {path: '/users/add', element: <AddUser/>},
+
+                    {path: '/roles', element: <ListRoles/>},
+                    {path: '/roles/edit/:id', element: <EditRole/>},
+                    {path: '/roles/add', element: <AddRole/>},
+
+                ]
+            }
+        ]
+    )
     // OR
     // .withReactRoutes(
     //     [
