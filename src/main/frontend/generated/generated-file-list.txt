@@ -1,0 +1,5 @@
+TarefasController.ts
+dev/insannity/react_todo/dtos/TarefaDTO.ts
+connect-client.default.ts
+endpoints.ts
+dev/insannity/react_todo/dtos/TarefaDTOModel.ts
