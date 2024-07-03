@@ -24,12 +24,12 @@ public class Role {
     String descricao;
 
 
-    public void setNome(String nome) {
-        this.nome = "ROLE_"+ nome;
-    }
-
-    public String getNome() {
-        return nome.substring("ROLE_".length());
-    }
+//    public void setNome(String nome) {
+//        this.nome = "ROLE_"+ nome;
+//    }
+//
+//    public String getNome() {
+//        return nome.substring("ROLE_".length());
+//    }
 
 }

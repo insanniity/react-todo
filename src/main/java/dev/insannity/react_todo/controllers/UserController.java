@@ -1,6 +1,7 @@
 package dev.insannity.react_todo.controllers;
 
 
+import com.vaadin.flow.server.auth.AnonymousAllowed;
 import com.vaadin.hilla.BrowserCallable;
 import dev.insannity.react_todo.dtos.UserDTO;
 import dev.insannity.react_todo.dtos.UserInsertDTO;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @BrowserCallable
 @RequiredArgsConstructor
+@AnonymousAllowed
 public class UserController {
 
 

@@ -29,8 +29,8 @@ public class DbInit implements ApplicationRunner {
 //        tarefasRepository.save(new Tarefa(null, "Estudar", "Estudar MongoDB", false));
 //
 //        roleRepository.deleteAll();
-//        roleRepository.save(new Role(null, "ROLE_ADMIN", "Administrador"));
-//        roleRepository.save(new Role(null, "ROLE_USER", "Usuário comum"));
+//        roleRepository.save(new Role(null, "ADMIN", "Administrador"));
+//        roleRepository.save(new Role(null, "USER", "Usuário comum"));
 
     }
 }

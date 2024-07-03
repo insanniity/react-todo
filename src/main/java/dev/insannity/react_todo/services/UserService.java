@@ -5,6 +5,7 @@ import dev.insannity.react_todo.docs.User;
 import dev.insannity.react_todo.dtos.UserDTO;
 import dev.insannity.react_todo.dtos.UserInsertDTO;
 import dev.insannity.react_todo.dtos.UserUpdateDTO;
+import dev.insannity.react_todo.repositories.RoleRepository;
 import dev.insannity.react_todo.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,7 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
 
     public List<UserDTO> findAll(){
         List<User> users = userRepository.findAll();
@@ -60,6 +62,9 @@ public class UserService {
         if(userDTO.getSenha() != null && !userDTO.getSenha().isEmpty() && !userDTO.getSenha().isBlank()) {
             user.setSenha(userDTO.getSenha());
         }
+        userDTO.getRoles().forEach(roleDTO -> {
+            roleRepository.findById(roleDTO.getId()).ifPresent(role -> user.getRoles().add(role));
+        });
     }
 
 }

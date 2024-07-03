@@ -13,6 +13,8 @@ const ListUsers = () => {
         UserController.findAll().then(setUsers);
     }, []);
 
+    console.log(users)
+
 
     return (
         <>
@@ -23,6 +25,7 @@ const ListUsers = () => {
                 <GridColumn path={"id"} autoWidth />
                 <GridColumn path={"email"} autoWidth />
                 <GridColumn path={"nome"} autoWidth />
+                <GridColumn path={"roles"} autoWidth />
                 <GridColumn header={"Ações"} frozenToEnd autoWidth>
                     {({item}) => <Button theme="primary" onClick={() => navigate(`/users/edit/${item.id}`)}>Edit</Button>}
                 </GridColumn>

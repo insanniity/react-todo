@@ -6,6 +6,9 @@ import jakarta.validation.constraints.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -27,11 +30,13 @@ public class UserDTO {
     @NotEmpty(message = "O e-mail não pode ser vazio")
     @NotNull(message = "O e-mail não pode ser nulo")
     String email;
+    List<RoleDTO> roles = new ArrayList<>();
 
 
     public UserDTO(User entity) {
         this.id = entity.getId();
         this.nome = entity.getNome();
         this.email = entity.getEmail();
+        entity.getRoles().forEach(role -> this.roles.add(new RoleDTO(role)));
     }
 }
